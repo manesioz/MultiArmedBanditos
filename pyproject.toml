@@ -1,0 +1,21 @@
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov=mab_platform"
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.run]
+source = ["mab_platform"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]
